@@ -39,7 +39,7 @@ class Example(wx.Frame):
         sizer.AddGrowableRow(2)
         panel.SetSizerAndFit(sizer)
 
-    @engine.async
+    @engine.asynchronous
     def cpu_bound(self, event):
         t = time.time()
         self.status.SetLabel("calculating...")

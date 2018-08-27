@@ -107,7 +107,7 @@ class ToolkitsTestCase(unittest.TestCase):
             time.sleep(0.2)  # timeout to let update_gui() be called
             return arg
 
-        @engine.async
+        @engine.asynchronous
         def async_gen():
             answer = yield [Task(task_func, i) for i in range(N)]
             self.assertEquals(answer, list(range(N)))

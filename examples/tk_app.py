@@ -33,7 +33,7 @@ class Application(tk.Frame):
             self.status.append(tk.Label(self))
             self.status[i].grid(column=1, row=1 + i, sticky=tk.W)
 
-    @engine.async
+    @engine.asynchronous
     def cpu_bound(self):
         t = time.time()
         self.status[0]["text"] = "calculating..."

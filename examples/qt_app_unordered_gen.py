@@ -71,7 +71,7 @@ class MainWidget(QtGui.QWidget):
         layout.addLayout(hbox)
         layout.addWidget(self.urls_table)
 
-    @engine.async
+    @engine.asynchronous
     def on_button_click(self, *args):
         t = time.time()
         self.status_label.setText("Downloading pages...")

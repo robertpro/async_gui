@@ -32,7 +32,7 @@ class MainWidget(QtGui.QWidget):
         layout.addWidget(self.result_label)
         layout.addWidget(self.image_label)
 
-    @engine.async
+    @engine.asynchronous
     def on_button_click(self, *args):
         self.status_label.setText("Downloading image...")
         # Run single task in separate thread
@@ -53,7 +53,7 @@ class MainWidget(QtGui.QWidget):
     def load_url(self, url):
         return urlopen(url).read()
 
-    @engine.async
+    @engine.asynchronous
     def check_primes(self, checked):
         t = time.time()
         self.status_label.setText("Checking primes...")

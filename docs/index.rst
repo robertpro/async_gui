@@ -49,13 +49,13 @@ First create :class:`Engine` instance corresponding to your GUI toolkit (see
 
     engine = PyQtEngine()
 
-It contains decorator :meth:`@engine.async <Engine.async>` which allows you to
+It contains decorator :meth:`@engine.asynchronous <Engine.asynchronous>` which allows you to
 write asynchronous code in serial way without callbacks.
 Example button click handler:
 
 .. code-block:: python
 
-    @engine.async
+    @engine.asynchronous
     def on_button_click(self, *args):
         self.status_label.setText("Downloading image...")
         # Run single task in separate thread

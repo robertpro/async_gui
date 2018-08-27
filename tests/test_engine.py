@@ -14,7 +14,7 @@ from async_gui.engine import return_result, Engine
 
 
 engine = Engine()
-async = engine.async
+asynchronous = engine.asynchronous
 
 
 class EngineTestCase(unittest.TestCase):
@@ -35,7 +35,7 @@ class EngineTestCase(unittest.TestCase):
     def test_async_with_return_before_yield(self):  # issue 1
         called = [False]
 
-        @async
+        @asynchronous
         def func():
             called[0] = True
             return
@@ -49,21 +49,21 @@ class EngineTestCase(unittest.TestCase):
         self.assertEquals(called[0], True)
 
     def test_async_with_result(self):
-        @async
+        @asynchronous
         def func():
             r = yield self.Task(self.simple_method)
             return_result(r)
         self.assertEquals(func(), 42)
 
     def test_async_process(self):
-        @async
+        @asynchronous
         def func():
             r = yield self.ProcessTask(mp_func, self._main_process)
             return_result(r)
         self.assertEquals(func(), 42)
 
     def test_async_multiprocess(self):
-        @async
+        @asynchronous
         def func():
             n = 10
             tasks = [self.ProcessTask(mp_func, self._main_process)
@@ -82,7 +82,7 @@ class EngineTestCase(unittest.TestCase):
     def test_multitask_unordered(self):
         n = 100
 
-        @async
+        @asynchronous
         def async_exec(tasks, skip_errors):
             gen = yield self.MultiTask(tasks, unordered=True,
                                        skip_errors=skip_errors)
@@ -97,7 +97,7 @@ class EngineTestCase(unittest.TestCase):
         tasks.append(self.Task(self.throwing, "test"))
         self.assertEquals(len(async_exec(tasks, skip_errors=True)), n + 1)
 
-    @async
+    @asynchronous
     def async_method(self):
         def check_the_same_thread():
             return thread.get_ident() == self._main_thread

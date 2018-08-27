@@ -22,7 +22,7 @@ Demo of button click handler:
 
 .. code-block:: python
 
-    @engine.async
+    @engine.asynchronous
     def on_button_click(self, *args):
         self.status_label.setText("Downloading image...")
         # Run single task in separate thread

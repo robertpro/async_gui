@@ -13,7 +13,7 @@ except ImportError:
 else:
     patch_socket()
     from async_gui.gevent_tasks import MultiGTask
-    from tests.test_engine import EngineTestCase, engine, async
+    from tests.test_engine import EngineTestCase, engine, asynchronous
 
 
     class GeventExecutorTestCase(EngineTestCase):
@@ -25,7 +25,7 @@ else:
         def test_gevent_urllib(self):
             self.gevent_with_urllib()
 
-        @async
+        @asynchronous
         def gevent_with_urllib(self):
 
             def download(url):

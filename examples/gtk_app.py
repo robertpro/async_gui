@@ -30,7 +30,7 @@ class GtkExample:
         box.show()
         self.window.show()
 
-    @engine.async
+    @engine.asynchronous
     def check_primes(self, widget, data=None):
         t = time.time()
         self.status.set_label("Checking primes...")

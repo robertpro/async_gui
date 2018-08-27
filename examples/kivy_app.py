@@ -22,7 +22,7 @@ class MyApp(App):
         grid.add_widget(self.status)
         return grid
 
-    @engine.async
+    @engine.asynchronous
     def cpu_bound(self, *_):
         t = time.time()
         self.status.text = "calculating..."
