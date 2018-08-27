@@ -9,10 +9,8 @@ pygtk.require('2.0')
 import gtk
 
 from async_gui import MultiProcessTask, Task
-from async_gui.toolkits.pygtk import GtkEngine
+from async_gui.toolkits.pygtk import engine
 from examples.cpu_work import is_prime, PRIMES
-
-engine = GtkEngine()
 
 
 class GtkExample:

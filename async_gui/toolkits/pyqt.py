@@ -9,3 +9,6 @@ class PyQtEngine(QtEngine):
     """ PyQt4 support
     """
     QtCore = QtCore
+
+
+engine = PyQtEngine()

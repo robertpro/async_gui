@@ -10,3 +10,6 @@ class GtkEngine(Engine):
     def update_gui(self):
         if gtk.events_pending():
             gtk.main_iteration()
+
+
+engine = GtkEngine()

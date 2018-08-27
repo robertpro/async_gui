@@ -13,3 +13,6 @@ class KivyEngine(Engine):
             EventLoop.window._mainloop()
         else:
             EventLoop.idle()
+
+
+engine = KivyEngine()

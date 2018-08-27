@@ -8,3 +8,6 @@ class TkEngine(Engine):
     """
     def update_gui(self):
         self.main_app.update()
+
+
+engine = TkEngine()

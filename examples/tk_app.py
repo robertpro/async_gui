@@ -7,12 +7,9 @@ except ImportError:
 import time
 
 from async_gui.engine import Task, MultiProcessTask
-from async_gui.toolkits.tk import TkEngine
+from async_gui.toolkits.tk import engine
 
 from cpu_work import is_prime, PRIMES
-
-
-engine = TkEngine()
 
 
 class Application(tk.Frame):

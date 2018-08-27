@@ -15,16 +15,13 @@ from PyQt4 import QtGui
 
 from async_gui import MultiTask
 from async_gui.engine import Task
-from async_gui.toolkits.pyqt import PyQtEngine
+from async_gui.toolkits.pyqt import engine
 
 
 if sys.version_info[0] == 3:
     from urllib.request import urlopen
 else:
     from urllib import urlopen
-
-
-engine = PyQtEngine()
 
 
 class MainWidget(QtGui.QWidget):

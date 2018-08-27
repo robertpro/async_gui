@@ -5,14 +5,10 @@ sys.path.insert(0, "..")
 import time
 
 import wx
-from async_gui.toolkits.wx import WxEngine
+from async_gui.toolkits.wx import engine
 from async_gui.engine import Task, MultiProcessTask
 
 from cpu_work import is_prime, PRIMES
-
-
-engine = WxEngine()
-async = engine.async
 
 
 class Example(wx.Frame):

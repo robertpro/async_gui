@@ -8,3 +8,6 @@ class WxEngine(Engine):
     """
     def update_gui(self):
         self.main_app.Yield()
+
+
+engine = WxEngine()

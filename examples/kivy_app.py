@@ -7,12 +7,10 @@ from kivy.uix.gridlayout import GridLayout
 import time
 
 from async_gui.engine import Task, MultiProcessTask
-from async_gui.toolkits.kivy import KivyEngine
+from async_gui.toolkits.kivy import engine
 
 from cpu_work import is_prime, PRIMES
 
-
-engine = KivyEngine()
 
 class MyApp(App):
     def build(self):
